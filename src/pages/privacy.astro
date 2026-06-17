@@ -74,6 +74,11 @@ const effectiveDate = "June 17, 2026";
         font-weight: 800;
       }
 
+      nav {
+        display: flex;
+        gap: clamp(12px, 2vw, 28px);
+      }
+
       main {
         padding: clamp(42px, 7vw, 92px) clamp(18px, 5vw, 72px);
       }
@@ -133,7 +138,10 @@ const effectiveDate = "June 17, 2026";
     <div class="shell">
       <header>
         <a class="brand" href="/">JXC</a>
-        <a href="/">Home</a>
+        <nav aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="https://github.com/jxc-global">GitHub</a>
+        </nav>
       </header>
 
       <main>
@@ -218,6 +226,7 @@ const effectiveDate = "June 17, 2026";
       <footer>
         <span>&copy; JOC Exploration &amp; Cattle LLC</span>
         <a href="/privacy/">Privacy Policy</a>
+        <a href="https://github.com/jxc-global">GitHub</a>
       </footer>
     </div>
   </body>
