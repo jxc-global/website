@@ -220,6 +220,10 @@ const capabilities = [
       }
 
       footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
         padding: 18px clamp(18px, 4vw, 56px);
         font-size: 12px;
         font-weight: 800;
@@ -332,7 +336,10 @@ const capabilities = [
         </section>
       </main>
 
-      <footer>&copy; JOC Exploration &amp; Cattle LLC</footer>
+      <footer>
+        <span>&copy; JOC Exploration &amp; Cattle LLC</span>
+        <a href="/privacy/">Privacy Policy</a>
+      </footer>
     </div>
   </body>
 </html>
