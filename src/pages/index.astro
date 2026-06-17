@@ -66,9 +66,14 @@ const capabilities = [
       }
 
       .brand {
-        font-size: 18px;
-        font-weight: 800;
-        letter-spacing: 0;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .brand-logo {
+        display: block;
+        width: clamp(82px, 10vw, 120px);
+        height: auto;
       }
 
       nav {
@@ -105,6 +110,24 @@ const capabilities = [
         line-height: 0.84;
         letter-spacing: 0;
         text-transform: uppercase;
+      }
+
+      .hero-logo {
+        display: block;
+        width: min(100%, 820px);
+        height: auto;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
 
       .dek {
@@ -271,7 +294,9 @@ const capabilities = [
   <body>
     <div class="shell">
       <header>
-        <a class="brand" href="/">JXC</a>
+        <a class="brand" href="/" aria-label="JXC home">
+          <img class="brand-logo" src="/jxc-logo.jpg" alt="" />
+        </a>
         <nav aria-label="Primary">
           <a href="#work">Work</a>
           <a href="#agents">Agents</a>
@@ -284,7 +309,10 @@ const capabilities = [
       <main>
         <section class="hero" aria-labelledby="title">
           <div class="hero-copy">
-            <h1 id="title">JXC</h1>
+            <h1 id="title">
+              <span class="sr-only">JXC</span>
+              <img class="hero-logo" src="/jxc-logo.jpg" alt="" />
+            </h1>
             <p class="dek">
               We build and operate AI agent teams for real business workflows.
             </p>
