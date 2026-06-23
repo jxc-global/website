@@ -100,6 +100,40 @@ const operatingPrinciples = [
         grid-template-rows: auto 1fr auto;
       }
 
+      @keyframes rise-in {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes signal-drift {
+        from {
+          background-position:
+            0 0,
+            0 0,
+            0 0,
+            0 0,
+            0 0,
+            0 0;
+        }
+
+        to {
+          background-position:
+            48px 0,
+            0 48px,
+            0 0,
+            0 0,
+            24px 18px,
+            0 0;
+        }
+      }
+
       header {
         display: flex;
         justify-content: space-between;
@@ -111,6 +145,7 @@ const operatingPrinciples = [
           linear-gradient(90deg, var(--blue) 0 22%, var(--amber) 22% 39%, var(--green) 39% 52%, transparent 52%)
             top left / 100% 5px no-repeat,
           var(--white);
+        animation: rise-in 460ms ease-out both;
       }
 
       .brand {
@@ -137,6 +172,9 @@ const operatingPrinciples = [
 
       nav a {
         border-bottom: 2px solid transparent;
+        transition:
+          border-color 160ms ease,
+          color 160ms ease;
       }
 
       nav a:hover,
@@ -164,6 +202,22 @@ const operatingPrinciples = [
         background:
           linear-gradient(135deg, rgba(47, 111, 237, 0.08), transparent 38%),
           var(--white);
+      }
+
+      .eyebrow,
+      h1,
+      .dek,
+      .fact {
+        animation: rise-in 580ms ease-out both;
+      }
+
+      h1 {
+        animation-delay: 80ms;
+      }
+
+      .dek,
+      .fact {
+        animation-delay: 160ms;
       }
 
       h1 {
@@ -220,6 +274,7 @@ const operatingPrinciples = [
           linear-gradient(45deg, rgba(18, 163, 106, 0.16), transparent 58%),
           var(--paper);
         background-size: 48px 48px;
+        animation: signal-drift 18s linear infinite;
       }
 
       .fact {
@@ -307,6 +362,14 @@ const operatingPrinciples = [
         justify-content: space-between;
         gap: 28px;
         background: var(--white);
+        transition:
+          background-color 160ms ease,
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .cell:hover {
+        transform: translateY(-3px);
       }
 
       .cell:nth-child(4n + 1) {
@@ -360,6 +423,13 @@ const operatingPrinciples = [
         font-weight: 850;
         text-transform: uppercase;
         background: var(--white);
+        transition:
+          background-color 160ms ease,
+          transform 160ms ease;
+      }
+
+      .list-item:hover {
+        transform: translateY(-2px);
       }
 
       .list-item:nth-child(6n + 1),
@@ -392,6 +462,13 @@ const operatingPrinciples = [
         justify-content: space-between;
         gap: 22px;
         background: var(--white);
+        transition:
+          background-color 160ms ease,
+          transform 160ms ease;
+      }
+
+      .metric:hover {
+        transform: translateY(-3px);
       }
 
       .metric:nth-child(1) strong {
@@ -468,6 +545,31 @@ const operatingPrinciples = [
         font-size: 12px;
         font-weight: 800;
         text-transform: uppercase;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        section {
+          animation: rise-in 520ms ease-out both;
+        }
+
+        section:nth-of-type(2) {
+          animation-delay: 80ms;
+        }
+
+        section:nth-of-type(3) {
+          animation-delay: 120ms;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.001ms !important;
+        }
       }
 
       @media (max-width: 860px) {
