@@ -55,6 +55,11 @@ const operatingPrinciples = [
         --white: #fff;
         --line: #111;
         --muted: #555;
+        --paper: #fbfaf6;
+        --blue: #2f6fed;
+        --green: #12a36a;
+        --amber: #f5b83d;
+        --coral: #f2664b;
       }
 
       * {
@@ -102,6 +107,10 @@ const operatingPrinciples = [
         gap: 24px;
         padding: 20px clamp(18px, 4vw, 56px);
         border-bottom: 2px solid var(--black);
+        background:
+          linear-gradient(90deg, var(--blue) 0 22%, var(--amber) 22% 39%, var(--green) 39% 52%, transparent 52%)
+            top left / 100% 5px no-repeat,
+          var(--white);
       }
 
       .brand {
@@ -126,6 +135,15 @@ const operatingPrinciples = [
         text-transform: uppercase;
       }
 
+      nav a {
+        border-bottom: 2px solid transparent;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        border-color: var(--blue);
+      }
+
       main {
         display: grid;
       }
@@ -143,6 +161,9 @@ const operatingPrinciples = [
         justify-content: space-between;
         gap: 40px;
         padding: clamp(32px, 6vw, 88px) clamp(18px, 5vw, 72px);
+        background:
+          linear-gradient(135deg, rgba(47, 111, 237, 0.08), transparent 38%),
+          var(--white);
       }
 
       h1 {
@@ -180,6 +201,7 @@ const operatingPrinciples = [
         font-weight: 850;
         letter-spacing: 0;
         text-transform: uppercase;
+        color: var(--blue);
       }
 
       .hero-panel {
@@ -192,7 +214,11 @@ const operatingPrinciples = [
         min-height: 360px;
         background:
           linear-gradient(90deg, transparent 47%, var(--black) 47%, var(--black) 53%, transparent 53%),
-          linear-gradient(0deg, transparent 47%, var(--black) 47%, var(--black) 53%, transparent 53%);
+          linear-gradient(0deg, transparent 47%, var(--black) 47%, var(--black) 53%, transparent 53%),
+          linear-gradient(135deg, rgba(47, 111, 237, 0.92) 0 18%, transparent 18% 100%),
+          linear-gradient(315deg, rgba(245, 184, 61, 0.9) 0 16%, transparent 16% 100%),
+          linear-gradient(45deg, rgba(18, 163, 106, 0.16), transparent 58%),
+          var(--paper);
         background-size: 48px 48px;
       }
 
@@ -202,6 +228,7 @@ const operatingPrinciples = [
         font-size: 16px;
         line-height: 1.35;
         font-weight: 700;
+        background: var(--paper);
       }
 
       .fact strong {
@@ -217,6 +244,16 @@ const operatingPrinciples = [
         border-bottom: 2px solid var(--black);
       }
 
+      section:nth-of-type(3n + 2) {
+        background: var(--paper);
+      }
+
+      section:nth-of-type(4n) {
+        background:
+          linear-gradient(90deg, rgba(18, 163, 106, 0.09), transparent 34%),
+          var(--white);
+      }
+
       .section-grid {
         display: grid;
         grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
@@ -228,6 +265,7 @@ const operatingPrinciples = [
         font-size: 14px;
         font-weight: 850;
         text-transform: uppercase;
+        color: var(--coral);
       }
 
       .large {
@@ -268,6 +306,23 @@ const operatingPrinciples = [
         flex-direction: column;
         justify-content: space-between;
         gap: 28px;
+        background: var(--white);
+      }
+
+      .cell:nth-child(4n + 1) {
+        box-shadow: inset 0 8px 0 var(--blue);
+      }
+
+      .cell:nth-child(4n + 2) {
+        box-shadow: inset 0 8px 0 var(--green);
+      }
+
+      .cell:nth-child(4n + 3) {
+        box-shadow: inset 0 8px 0 var(--amber);
+      }
+
+      .cell:nth-child(4n) {
+        box-shadow: inset 0 8px 0 var(--coral);
       }
 
       .cell h3 {
@@ -304,6 +359,20 @@ const operatingPrinciples = [
         line-height: 1.08;
         font-weight: 850;
         text-transform: uppercase;
+        background: var(--white);
+      }
+
+      .list-item:nth-child(6n + 1),
+      .list-item:nth-child(6n + 5) {
+        background: rgba(47, 111, 237, 0.08);
+      }
+
+      .list-item:nth-child(6n + 2) {
+        background: rgba(245, 184, 61, 0.18);
+      }
+
+      .list-item:nth-child(6n + 4) {
+        background: rgba(18, 163, 106, 0.1);
       }
 
       .metrics {
@@ -322,6 +391,19 @@ const operatingPrinciples = [
         flex-direction: column;
         justify-content: space-between;
         gap: 22px;
+        background: var(--white);
+      }
+
+      .metric:nth-child(1) strong {
+        color: var(--blue);
+      }
+
+      .metric:nth-child(2) strong {
+        color: var(--green);
+      }
+
+      .metric:nth-child(3) strong {
+        color: var(--coral);
       }
 
       .metric strong {
@@ -359,6 +441,16 @@ const operatingPrinciples = [
         padding: 0 18px;
         font-weight: 850;
         text-transform: uppercase;
+        background: var(--amber);
+        transition:
+          background-color 160ms ease,
+          transform 160ms ease;
+      }
+
+      .contact a:hover,
+      .contact a:focus-visible {
+        background: var(--green);
+        transform: translateY(-2px);
       }
 
       .footer-links {
